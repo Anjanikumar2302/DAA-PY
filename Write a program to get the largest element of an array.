@@ -1,0 +1,5 @@
+def find_largest_element(arr):
+    return max(arr)
+array = [10, 5, 20, 8, 15]
+largest_element = find_largest_element(array)
+print(f'The largest element in the array is: {largest_element}')
