@@ -1,0 +1,17 @@
+def is_prime(n, i=2):
+    if n <= 2:
+        return n == 2
+    if n % i == 0:
+        return False
+    if i * i > n:
+        return True
+    return is_prime(n, i + 1)
+def primes_up_to(n, current=2):
+    if current > n:
+        return []
+    if is_prime(current):
+        return [current] + primes_up_to(n, current + 1)
+    else:
+        return primes_up_to(n, current + 1)
+n = 30
+print(primes_up_to(n))
