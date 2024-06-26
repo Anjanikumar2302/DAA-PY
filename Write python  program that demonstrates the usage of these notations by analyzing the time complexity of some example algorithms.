@@ -1,0 +1,26 @@
+def constant_algo(items):
+    result = items[0] * items[0]
+    print(result)
+def linear_algo(items):
+    for item in items:
+        print(item)
+def quadratic_algo(items):
+    for item in items:
+        for i in range(len(items)):
+            print(item, items[i])
+def logarithmic_algo(n):
+    i = 1
+    while i < n:
+        print(i)
+        i = i * 2
+def exponential_algo(n):
+    if n <= 1:
+        return n
+    else:
+        return exponential_algo(n-1) + exponential_algo(n-2)
+items = [1, 2, 3, 4, 5]
+constant_algo(items)
+linear_algo(items)
+quadratic_algo(items)
+logarithmic_algo(16)
+exponential_algo(5)
