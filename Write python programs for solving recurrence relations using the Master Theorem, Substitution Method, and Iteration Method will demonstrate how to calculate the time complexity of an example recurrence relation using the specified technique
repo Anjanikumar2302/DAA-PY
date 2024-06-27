@@ -1,0 +1,23 @@
+def master_theorem():
+    a = 2
+    b = 2
+    f_n = lambda n: n
+    log_b_a = 1  # log_b(a) where b=2 and a=2
+    if f_n == lambda n: n**log_b_a:
+        print("Master Theorem: T(n) = Θ(n log n)")
+def substitution_method(n):
+    c = 1  
+    T = lambda n: c * n * (1 if n == 1 else (n - 1).bit_length())
+    print(f"Substitution Method: T({n}) = O({T(n)})")
+def iteration_method(n):
+    k = 0
+    T_n = n
+    while n > 1:
+        n //= 2
+        k += 1
+        T_n += n
+    print(f"Iteration Method: T(n) = O({T_n})")
+n = 16
+master_theorem()
+substitution_method(n)
+iteration_method(n)
