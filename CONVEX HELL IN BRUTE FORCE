@@ -1,0 +1,23 @@
+def orientation(p, q, r):
+    val = (q[1] - p[1]) * (r[0] - q[0]) - (q[0] - p[0]) * (r[1] - q[1])
+    if val == 0:
+        return 0
+    return 1 if val > 0 else 2
+def convexHull(points):
+    n = len(points)
+    if n < 3:
+        return "Convex hull not possible"
+    hull = []
+    for i in range(n):
+        for j in range(i+1, n):
+            count = 0
+            for k in range(n):
+                if k != i and k != j:
+                    if orientation(points[i], points[j], points[k]) == 0:
+                        count += 1
+            if count == 0:
+                hull.append(points[i])
+                hull.append(points[j])
+    return hull
+points = [[0, 3], [2, 2], [1, 1], [2, 1], [3, 0], [0, 0], [3, 3]]
+print(convexHull(points))
