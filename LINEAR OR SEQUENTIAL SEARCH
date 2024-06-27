@@ -1,0 +1,12 @@
+def linear_search(nums, target):
+    for i in range(len(nums)):
+        if nums[i] == target:
+            return i
+    return -1
+nums = [1,2,3,4,5,6,7]
+target = 3
+index = linear_search(nums, target)
+print(f"Element {target} is at index {index}")  
+target = 5
+index = linear_search(nums, target)
+print(f"Element {target} is at index {index}") 
